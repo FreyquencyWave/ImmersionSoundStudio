@@ -1,0 +1,136 @@
+# Package describing a general system for representingSounds and maps of collections of sounds
+from pygame import *
+import math as m
+soundcoeff=1000
+
+# Factor for inverese square sound calculation
+class BoundaryError(Exception):
+    """ Error condition to be used if a position is outside the voundary of a soundscape
+    pass """
+
+def distance(pos0,pos1):
+
+    # Calculates distance betrween two point using pythagoras
+    # Both parameters are co-ordinate pairs (x,y)
+    x0,y0=pos0
+    x1,y1=pos1
+    x=x1-x0
+    y=y1-y0
+    return m.sqrt(x*x+y*y)
+
+def pan(pos0, pos1):
+
+    # Calculates to position of an object in the sound sound field relative
+    # to the player
+    # pos0 - the players position
+    # pos1 - the position of the sound object
+    # returns a value in the range 0 to 1
+    # where 0 is extreme left and 1 is extreme right.
+    
+    x0,y0=pos0
+    x1,y1=pos1
+    dist=distance(pos0,pos1)
+    if dist==0 :
+        return 0.5
+    return ((x1-x0)/dist+1)/2
+
+def stereo_vol(player_pos, sound_pos, mapsize=200):
+    dist=distance(player_pos,sound_pos)
+    pdist= dist/(m.sqrt(4*mapsize*mapsize))
+    vol = 1-pdist
+    fact = soundcoeff/((dist+1)*(dist+1))
+    vol= fact*vol
+    if vol >1: vol =1
+    # distance as 0..1 where 1 is max distance on map (diagonal)
+    pos=pan(player_pos,sound_pos)
+    return((1-pos)*vol,pos*vol)
+    
+class SoundMap:
+    def in_range(self,a,b,c):
+        """ Function to check if a number lies between two other values inclusive
+            :param a: value to be checked
+            :param b: lower bound
+            :param c: upper bound
+            """
+        if a>=b and a<=c:
+            return True
+        else:
+            return False
+        
+    def on_map(self,pos):
+        """ Function to check if a specific position is actually on the map.
+            :param pos: position to be checked against the current map
+            """
+        (x,y)=pos
+        if self.in_range(x,self.xmin,self.xmax) and self.in_range(y,self.ymin,self.ymax):
+            return True
+        else:
+            return False
+
+    
+    
+        
+    def __init__(self,name, cutscene_sound=None,  entry_sound=None, exit_sound=None, background_sound=None, foot=None, entryvo=None,
+                 sounds=[], size=200, entry=(0,0),out_door=None,nextscape=None,prevscape=None):
+        """
+            :param name: the name of the map
+            :param cutscene_sound: pygame.pymixer.Sound object to be played before entry to the map
+            :param entry_sound: pygame.pymixer.Sound object to be played on entry to the map
+            :param exit_sound: pygame.pymixer.Sound object to be played on leaving the map
+            :param background_sound: pygame.pymixer.Sound object to be played continuously
+            :param entryvo_sound: pygame.pymixer.Sound object to be played on entry to the map
+            :param sounds: list of sound object tobe on the map initially
+            :param size: the length of the sides of a square map
+                         the coordinates of the sides run from -size/2 to +size/2
+            :param entry: the point at which a player enters the map, defaukts to the middle(origin)
+            :param out_door: the location of the exit door,
+                            deafaults to the middle of the top of the map
+            :param nextscape: the next soundscape to go to.
+                     ***   This will need generalising ***
+                     ***   to allow for multiple exits ***
+                     ***   perhaps a list of           ***
+                     ***   possible exits              ***
+ 
+            """
+        self.name=name
+        self.tlist=sounds
+        self.cutscene=cutscene_sound
+        self.first_time=True
+        self.enter=entry_sound
+        self.enter_save=entry_sound
+        self.entervo=entryvo_sound
+        self.bg=background_sound
+        self.foot=foot
+        self.xmin=self.ymin=-size/2
+        self.xmax=self.ymax=size/2
+        self.start=entry
+        self.pos=entry
+        self.next=nextscape
+        self.prev=prevscape
+        if out_door is None:
+            self.od=(0,size/2)
+            exit
+        else:
+            self.od=out_door
+        (xi,yi)=self.start
+        (xo,yo)=self.od
+        if not self.on_map(self.start):
+            raise BoundaryError(self.start)
+        if not self.on_map(self.od):
+            raise BoundaryError(self.od)
+        self.max_distance=m.sqrt(2*size*size)
+        self_no_of_trips=0
+
+
+class Source:
+    def __init__(self, n, sound=None,xpos=0,ypos=0,ex=None,namesound=None, loop=-1, atm =None):
+        self.name=n
+        self.sound=sound
+        self.ch=None
+        self.x=xpos
+        self.y=ypos
+        self.exitscape=ex
+        self.loop=loop
+        self.namesound=namesound
+        self.atmos=atm
+        

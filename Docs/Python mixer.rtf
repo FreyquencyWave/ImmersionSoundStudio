@@ -1,0 +1,91 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 PLYING SOUNDS\
+\
+To play sounds we use \'93mixer\'94 inside the pygame package.\
+\
+I have imported everything from pygame so instead of using pygame.mixer we can just use mixer.\
+\
+At the start of the program we need to initialise the mixer using either\
+\
+mixer.init(channels=1) \
+\
+for mono, or as we need to \
+\
+mixer.init(channels=2) \
+\
+for stereo.\
+\
+In our program this happens at the end of Sounds.py\
+\
+The mixer has a number of channels we can play sounds back on.\
+\
+In Sounds.py i have allocated a channel and called bg_music with the following code\
+\
+bg_music=mixer.Channel(1)\
+\
+Because we import Sounds.py this is available to the rest of the program.\
+\
+I have also created a set of sounds in the list mmap also in sounds.py\
+\
+To play a sound either\
+\
+	If it is background music\
+\
+	bg_music.play(soundname)\
+\
+	where sound name is one of the sounds in the list mmap.\
+\
+	will play it once. \
+\
+	If we are in the package GameUtils then self.wait_on_channel(bg_music) \
+	will wait for it to finish\
+\
+or if we want it to play continuously we can use \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 	bg_music.play(soundname, loop=-1)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+To stop it we will need to use\
+\
+bg_music.stop()\
+\
+To play sounds on another channel:\
+\
+First we have to find a  free channel.\
+\
+ch=mixer.find_channel()\
+\
+You can call it what you wish I have just used the name ch.\
+\
+and then play it.\
+\
+ch.play(soundname)\
+\
+You can then either wait for it to finish or stop it when you are ready.\
+For most of the objects in the soundscape you will just let them play \
+and stop them when you leave the soundscape, but the entry and exit \
+will need to be waited for.\
+\
+\
+ch.set_volume(lv,rv)\
+will set the play back volumes for the left and right channels.\
+lv - is the volume of the left channel and\
+rv- is the right hand one\
+\
+If you only supply one value\
+ch.set_volume(v)\
+it sets both channels to the same level.\
+\
+NOTE - mixer confuses things by using th eword \'93channel\'94 for the left\
+ and right output channels of the mixer and also the input channels we play our sounds.\
+\
+the values are in the range 0 to 1 where 0 is silence and 1 is full volume.\
+}

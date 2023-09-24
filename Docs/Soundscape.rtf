@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17380\viewh18340\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 The package starts with the usual stuff.\
+We import pygame to get the mixer and music controls.\
+we need to use some maths functions later, notably - square root - sqrt. so we make the maths package available \
+with the prefix m.  So now if we want to find a square root we can do something like \
+	distance =  m.sqrt(length)\
+\
+\
+I have defined a value \'93soundcoeff\'94, this needs some explanation.\
+I didn\'92t think that the sounds were changing realistically as the player moved around the soundscape.\
+I realised this was because i was just decreasing the sound as the player got further away. In real life sound drops off according to the Inverse Square Law.\
+That is - its volume drops off as divided by the square of its distance from us. It sounds much more realistic.\
+In practice this makes it drop off far too rapidly so I have introduced an arbitrary factor for increasing the volume overall. \
+\
+This is soundcoeff. I found the value of a 1000 by trial and error - you may want to change it.\
+\
+Next we define a few a few useful functions.\
+\
+distance -  calculates the distance between two points using Pythagoras\'92 Theorem.\
+\
+pan - takes two points - the first for the player and the second for a sound object.\
+         It calculates where in the stereo sound stage the sound lies from left to right.  \
+         It returns a number in the range 0 to 1 where 0 is left and 1 is right.\
+         So 0.5 is bang in the middle.\
+\
+stereo_vol - takes the player position and the position of a sound object.\
+	         It uses distance and pan to work out the correct left and right channel\
+	         volumes for the object, taking into account its distance and position relative\
+	         to the player in the sound field.\
+	         It returns a pair of values - the left and right volumes for the object.\
+\
+\
+Next we define our class \'93SoundMap\'94 which represents a Soundscape or level in the game.\
+\
+\
+It has a couple of local functions  in_range and on_map which are used for checking\
+whether an object or position is valid (inside the Soundscape)\
+\
+\
+In common with all classes it need a constructor or __init__ function.\
+We should be able to supply this with everything we need to know about a Soundscape\
+and it should build one for us.\
+\
+We supply it with \
+	name - a string to use as a name for the Sounsdcape - I\'92m not sure this is needed\
+	entry_sound -a mixer.sound object to play when we enter\
+	exit_sound - to play on exit.\
+           background_sound - the music to play in the background for the Soundscape\
+	size - the size of the soundscape\
+	entry - the position the player arrives at when they enter the Soundscape.\
+		usually the middle but could be anywhere.\
+	nextscape - the soundscape to go to on leaving this one.\
+		         should change this later to be a list so that there is\
+     		         a choice of soundscape to go to.\
+	tlist - a list of Sound objects - these are the objects sat all over the soundscape \
+	        which are making the game sounds for the player.\
+	        Note that these are not just mixer.sounds\
+	       They contain other information defined just below\
+\
+Then we define the Sound objects.\
+\
+Each of these has a \
+\
+	name - a string again  - I\'92m not sure this is needed\
+	sound - a mixer.sound object to play\
+	ch - this will tell us which mixer channel is being used for this sound.\
+	xpos, ypos	- the position of the sound in the Soundscape..\
+}

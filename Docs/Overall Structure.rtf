@@ -1,0 +1,34 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 We have all the files, folders  and information for the game kept within one top level folder.\
+On my computer it is called Game. I think on your s it is called ESSgame.\
+\
+Within this folder there are two folders:\
+\
+The first is called \'93Docs\'94 and contains information I have written for you describing the program, including this document.\
+\
+The second is called \'93Sounds\'94 and it should contain all your sound files for use in the program.\
+\
+There are also four files containing Python code (described in more detail in separate documents), These are:\
+\
+__main__.py 	This contains the main program. All it does is show the start menu, get a response and \
+			then take appropriate action to either quit, restore a game or play a new game. All it \
+			does right now is either quit or play a new game.\
+\
+Sounds.py		This contains both short names (aliases) and full file names for all your sounds. It also 			creates two dictionaries \
+				smap - which translates from short names to pathnames for any sound file\
+				mmap - which associates a mixer.Sound object with each short name\
+Soundscape.py	This contains the definitions of a Soundscape class called \'93SoundMap\'94 , a class called 			\'94Sound\'94 to represent the Sound objects you find in the Soundscape and some useful 			functions.\
+			\
+GameUtils.py	This defines a lot of commonly used things like the player command names and options 			for the start menu.\
+			It also contains the main class for the game called \'93Emgame\'94. this contains methods to :\
+			get a user command from the keyboard\
+			do a user command\
+			show the start menu\
+			continue a saved game\
+			wait for a sound to finish playing}

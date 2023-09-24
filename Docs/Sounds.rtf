@@ -1,0 +1,103 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 First a bit of background.\
+In order to play sounds we will be using mixer from the package pygame.\
+we can set up any number of input channels to this mixer and play them out as either a single mono channel or, as we will, a stereo pair.\
+\
+The method call\
+\
+mixer.init(channels=2) \
+\
+sets us up a mixer with with stereo output.\
+\
+In order to play a sound sample from a file we need to create a pygame mixer.sound object.\
+\
+mysound = mixer.sound(\'93some filename\'94);\
+\
+is the sort of command to do it.\
+\
+In order to play it back we have to associate the sound with a mixer channel and then tell it to play that channel. \
+There is a special mixer channel for playing back background game music. I though we could use this for the background sound in each Soundscape.\
+\
+In this module we do the following:\
+\
+1. Create a list called SFshort containing short names for all the sound files.\
+2. Create a list called SFNames containing the proper names of all the sound files including their extensions.\
+3. Start up a stereo mixer\
+\
+4. Do some clever stuff setting up some dictionaries.\
+\
+\
+prog= sys.argv[0]\
+ sys.argv[0] gets us the name of the program which is also the name of the folder it is in.\
+so prog will now contain the name of our top level folder where we keep everything.\
+\
+for i in range(len(SFShort)): will\
+	find out the length of the list SFShort (how many sound files we are using)\
+	it will then take each value from 0 to the length -1. (we do this a lot in computing rather than from 1 to 									the length)\
+	prog+\'94/Sounds/\'93 +SFNames[i]      will get us the long name of the sound file from its list SFNames\
+						stick \'93Sounds\'94 on the front of that and the name of the program \
+						folder in front of that.\
+	e.g. for the short name CONTINUE i will have the value 3 (it\'92s the 3rd in the list counting from 0)\
+	       SFNames[3] will be \'93continuegamevoiceover.mp3\'94\
+	       prog will be ESSgame, so the whole thing will be \
+		\'93Essgame/Sounds/continuegamevoiceover.mp3\'94\
+\
+	the smap[SFshort[i]] will create a dictionary entry for \'93CONTINUE\'94 and make it refer to the pathname 	we have just created.\
+\
+	 mmap[SFShort[i]]=mixer.Sound(prog+"/Sounds/"+SFNames[i])\
+		will do almost the same thing except the mixer.Sound bit will take our pathname and use it to \
+		an object which can be played on a mixer channel.\
+		This then gets put into the dictionary mmap  where it can be referred by the name 		\'93CONTINUE\'94\
+\
+The later stuff in here is setting up each of the soundscapes. It is only partially complete but serves as a good example.\
+\
+spacescape=ss.SoundMap("Space",\
+                       entry_sound=mmap['DOOROPEN'],\
+                       exit_sound=None,\
+                       background_sound=mmap['MILKY'],\
+                       sounds=[ss.Sound("Mars",mmap['PLANET'],90,90),\
+                                      ss.Sound("Apollo",mmap['ROCKET'],-60,-70)\
+                                     ],\
+                       size=200,\
+                       entry=(0,0),\
+                       nextscape=None)\
+\
+sets up the first space soundscape.\
+\
+we have imported the module Soundscape as \'93ss\'94.\
+So ss.SoundMap(\'85..\
+will use the __init__ method of SoundMap to create us a new Soundmap object.\
+we assign the created object to the name spacescape.\
+The rest of it is just setting up the things in the SoundMap\
+The most interesting part is \
+sounds=[ss.Sound("Mars",mmap['PLANET'],90,90),\
+               ss.Sound("Apollo",mmap['ROCKET'],-60,-70)\
+               ],\
+this is the list of the sound objects in the map. Yours will need more than just these two.\
+after the equals sign is a list containing just two items both ss.Sound objects. Theyt are created by supplying a name for the object, a sound which we get from the dictionary mmap and a position in x and y coordinates.\
+\
+The other soundscapes have been set up with no detail - just names.\
+Each soundscape has an attribute = nextscape, which contains a reference to the next soundscape to use when we exit this one.\
+\
+This code\
+\
+spacescape.nextscape=cabinscape\
+cabinscape.nextscape=outsidescape\
+outsidescape.nextscape=riverscape\
+riverscape.nextscape=harbourscape\
+\
+sets them all up.\
+ Finally we just set a few useful values.\
+\
+startscape - we set to refer to the first soundscape.\
+nextscape will be the next soundscape to enter. At the start this will be the same as startscape\
+currentscape - will be the soundscape the player is currently in. Again, at the start it should be \
+the same as startscape.\
+\
+}

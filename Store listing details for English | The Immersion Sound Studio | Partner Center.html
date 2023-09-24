@@ -1,0 +1,1002 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-us" xml:lang="en-us">
+<head>
+    <meta charset="utf-8" />
+   
+    <script>
+        function cdnFallback(name) {
+            fallbackSource = "/dashboard/win32apps/staticres/" + name
+            let s = document.createElement("script");
+            s.src = fallbackSource;
+            document.body.appendChild(s);
+        }
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="https://partner.microsoft.com:443/en-us/dashboard/win32apps" />
+    <script type="text/javascript">
+        window.appContext = {
+            // PLEASE TRY TO LEVERAGE FULL POWER OF CS-HTML TEMPLATES.
+            // NOT EVERYTHING NEEDS TO BE A STRING.
+
+            // Page Load Request Id (to help UI telemetry)
+            pageLoadRequestId: '3a6c54fa-f5bb-4c1a-bda9-6dc7b5068f20',
+            
+            // [PLX] Publishing Flow Experience related flights/flags (need proper consolidation)
+            flightsData: 'WorkspacePreview,CreateWin32Apps,StoreWin32Dashboard,StoreWin32AnalyticsOverviewDashboard,StoreWin32RatingsAndReviews,StoreWin32AppDiscoverabilityOption,StoreWin32CustomErrorCodes,StoreWin32AnalyticsUsageAndHealthDashboard,StoreWin32RatingAndReviewGeographicalSpread,StoreWin32ProductManagementTab,ImportExportFeature,StoreWin32OverviewDashboardV2,StoreAdsBanner',
+            ageRatingsEnabled: 'True',
+            showSubmissionOverviewViewButton: 'True',
+            
+            // [DNA] Data and Analytics related flights/flags (need proper consolidation)
+            dataStatusMessage: 'Please note that charts on Overview, Usage and Health reports will only show data for one month.',
+            pageFlightsData: '{"installs":["StoreWin32Dashboard"],"usage":["StoreWin32AnalyticsUsageAndHealthDashboard"],"health":["StoreWin32AnalyticsUsageAndHealthDashboard"],"overview":["StoreWin32AnalyticsOverviewDashboard"],"ratingsAndReviews":["StoreWin32RatingsAndReviews"]}',
+            chartFlightsData: '{}',
+            
+            // User Context Information (to help UI telemetry)
+            userContext: {"SellerId":84394870,"PublisherName":"Immersion Sound Studio","PublisherEmail":"freyajshaw@yahoo.com","UserId":169825110,"PersistentUserId":985155544581636,"AccountType":"Individual","IsWobo":false}
+        };
+    </script>
+</head>
+<body class="dashboard">
+    <a href="javascript:void(0);" onclick="skipContent()" class="skip-to-main-content" style="z-index: -2; position: absolute; top: auto; left: -999px;">Skip to main content</a>
+    <!-- CorrelationId: ea85c65a-4c2b-4f83-8694-3f44acdd3943 -->
+<!-- FranceCentral.RDA085FCAEC212 -->
+<!-- 2023.4.27.1 -->
+<!-- 5/18/2023 4:05:38 PM -->
+
+<input type="hidden" id="serviceName" value="win32appsweb" />
+<input type="hidden" id="awaMarket" value="en-us" />
+
+    <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="https://partnerresources.azureedge.net/public/2023.4.27.1/scripts/require.min.js"></script>
+
+
+
+        <script>
+            $('head').append('<link rel="stylesheet" type="text/css" href="https://partnerresources.azureedge.net/public/2023.4.27.1/styles/icon.css" />');
+        </script>
+        <script>
+            $('head').append('<link rel="stylesheet" type="text/css" href="https://partnerresources.azureedge.net/public/2023.4.27.1/styles/ui-framework.min.css" />');
+        </script>
+<script>
+    var fdRequireConfig = {
+        baseUrl: 'https://partnerresources.azureedge.net/public/2023.4.27.1/scripts/',
+        
+        context: 'frontdoor',
+        paths: {
+            'jquery': '//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min',
+            'knockout': '//ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0',
+            'clickstreamTracker': 'https://partnerresources.azureedge.net/public/2023.4.27.1/scripts/clickstreamTracker-module'
+        },
+        bundles: {
+            'https://partnerresources.azureedge.net/public/2023.4.27.1/scripts/partner.min.js': ['local-storage','local-storage-helper','util','meControl','single-signon','customTracker','init','common','text', 'fd-aijs', 'fd-onedsjs', 'fd-onedsdiag'],
+        },
+        waitSeconds: 10,
+    }
+
+    var fdRequire = require.config(fdRequireConfig);
+    fdRequire(['single-signon']);
+</script>
+
+
+<script type="text/javascript">
+    
+    fdRequire(['fd-onedsdiag', 'fd-onedsjs'], function (onedslog, fdonedsjs) {
+        onedslog.init({
+            pageCID: 'ea85c65a-4c2b-4f83-8694-3f44acdd3943',
+            pageCV: 'uCJ2qX24FUe+IJy8.0'
+        });
+
+        fdonedsjs.init({
+            jsPath: "https://js.monitor.azure.com/scripts/c/ms.analytics-web-3.gbl.min.js",
+            key: "1966dbd95aa2467090876e6256147010-acc6e98d-0ba5-4dc2-b624-c3bef3b3d398-7351"
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        fdRequire(['fd-aijs'], function (fdaijs) {
+            fdaijs.init({
+                jsPath: "https://partnerresources.azureedge.net/public/2023.4.27.1/scripts/ai.min.js",
+                key: "e75fed89-857e-4baa-bfa5-9b087df174ce"
+            });
+        });
+    });
+    </script>
+
+<script type="text/javascript">
+    // Helper function to log cookie actions
+    function LogCookieAction(name, action) {
+        //Cookie action object
+        var cookieAction = {
+            cookieName: name,
+            eventType: action,
+            url: window.location.href
+        }
+
+        //Don't log the name if it has already been logged.
+        var loggedCookies = sessionStorage.getItem("loggedCookieNames") ? JSON.parse(sessionStorage.getItem("loggedCookieNames")) : [];
+        if (loggedCookies.length > 0 && loggedCookies.indexOf(name) > -1) {
+            return;
+        }
+        //Cache the name
+        loggedCookies.push(name);
+        sessionStorage.setItem("loggedCookieNames", JSON.stringify(loggedCookies));
+        //Log the action
+        $.ajax({
+            url: '/fdapi/cookie',
+            data: JSON.stringify(cookieAction),
+            contentType: 'application/json',
+            type: 'POST'
+        });
+    }
+</script>
+
+    <script type="text/javascript">
+        
+        var s = document.createElement('img');
+        s.onerror = "var m=document.createElement('meta');m.name='ms.dqp0';m.content='true';document.getElementsByTagName('head')[0].appendChild(m);";
+        s.onload = "var m=document.createElement('meta');m.name='ms.dqp0';m.content='false';document.getElementsByTagName('head')[0].appendChild(m);";
+        s.src = 'https://c1.microsoft.com/c.gif?';
+        s.style.display = "none";
+        document.body.appendChild(s);
+
+        var cookieDesc = Object.getOwnPropertyDescriptor(Document.prototype, 'cookie') || Object.getOwnPropertyDescriptor(HTMLDocument.prototype, 'cookie');
+        if (cookieDesc && cookieDesc.configurable) {
+            Object.defineProperty(document, 'cookie', {
+                get: function () {
+                    return cookieDesc.get.call(document);
+                },
+                set: function (val) {
+                    cookieDesc.set.call(document, val);
+                    let name = val.match(/^(.+?)=/g);
+                    if (name.length > 0) {
+                        LogCookieAction(name[0], "Drop");
+                    }
+                }
+            });
+        }
+    </script>
+<!DOCTYPE html>
+
+
+    <link rel="stylesheet" href="https://pmecommonuxresources.azureedge.net/public/2023.05.09.5/css/onedashboard.min.css" />
+    <link rel="stylesheet" href="https://pmecommonuxresources.azureedge.net/public/2023.05.09.5/css/onedashboardcomponents.min.css" />
+
+
+
+<script type="text/javascript">
+    var commonUxBaseUrl = "";
+    var devCenterBaseUrl = "https://developer.microsoft.com";
+    var sellerCenterBaseUrl = "https://seller.microsoft.com";
+    var partnerCenterBaseUrl = "https://partnercenter.microsoft.com";
+    var sellerDashBaseUrl = 'https://sellerdashboard.microsoft.com';
+    var partnerBaseUrl = '';
+    var devCenterSellerAccountId = '84394870';
+    var commonuxStaticPath = 'https://pmecommonuxresources.azureedge.net/public/2023.05.09.5';
+</script>
+
+
+<div>
+    
+
+<script type="module">
+    import { UserEventWatcher } from 'https://harmony-portalplatform.azureedge.net/he-shell/4.0.16/en-us/features/user-event/user-event-watcher.js';
+    var userEventWatcher = UserEventWatcher.getInstance();
+    userEventWatcher.createEventListener(
+        [
+            {
+                className: 'leftnav-wksp-event',
+                message: 'A workspace was selected in the LeftNav.',
+                attributes: ['data-workspaceid'],
+            },
+            {
+                className: 'breadcrumb-event',
+                message: 'User navigated through breadcrumb.',
+                attributes: ['href'],
+            },
+            {
+                className: 'programCardLink',
+                message: 'User navigated through workspace home cards.',
+                attributes: ['data-workspaceid'],
+            },
+            {
+                className: 'account-picker-event',
+                message: 'An account was selected in the MeControl.',
+                attributes: ['href'],
+            },
+            {
+                className: 'onedash-header-search-box',
+                message: 'User accessed the search.',
+                attributes: [],
+                useKeyup: true
+            },
+            {
+                nodeName: "A",
+                message: 'An achor element was clicked.',
+                attributes: ['href'],
+            },
+        ],
+        document
+    );
+</script>
+
+<script type="module" src="https://harmony.azureedge.net/npm/@harmony/pcportal-shell-enablers/3.3.5/en-us/features/lighthouse/lighthouse-watcher.js" defer></script>
+
+
+
+<script type="text/javascript" src="/common/ux/staticres/js/globalStore.min.js"></script>
+<script>
+    let internalPathStore = new BehaviorSubject("internalPathStore", [".*/dashboard/azure1pp.*",".*internal/firstparty.*",".*internal/gamepass/.*",".*internal/tools/prose/.*",".*internal/tools/newprose/.*",".*internal/tools/payoutmanagement/.*",".*internal/tools/calc/.*",".*internal/incentives/.*",".*/common/ux/docs/.*",".*internal/tools/casereviews.*",".*internal/taxwithholding/.*",".*/internal/tools/referrals.*",".*/dashboard/account/exp/internal/tools/partnerdiversity.*",".*/internal/tools/pricesheetuploader.*",".*internal/tools/support.*",".*/dashboard/account/exp/internal/tools/partneroperationstool.*",".*/internal/home.*"]);
+    let qcPreferenceStore = new BehaviorSubject("qcPreferenceStore", "False");
+    let breadCrumbStore = new BehaviorSubject("breadCrumbStore", {Href: "/en-us/dashboard/apps-and-games/overview", Title: "Apps and games", Id: "rr3q88o"});
+    let breadCrumbReady = new ReadySubject("breadCrumbReady");
+    let taskMenuReady = new ReadySubjectBatch("taskMenuReady");
+    let wsStatus = new BehaviorSubject("wsStatus", "True");
+</script>
+
+
+    <script>
+        $('body').addClass('modernUX');
+    </script>
+
+    <script>
+        $('body').addClass('breadcrumb-active');
+    </script>
+
+    <script>
+        if (sessionStorage.getItem('darkMode') !== null) {
+            $('body').addClass('darkMode');
+        }
+    </script>
+
+<header id="onedash-header-wrapper" class="onedash-header-universal" data-bi-area="OneDashboardTop">
+    <div class="onedash-header-title pull-left">
+            <div id="onedash-hamburger-mobile">
+                <button class="onedash-hamburger-btn" data-bi-slot="0" data-bi-id="ExpandMenu-SetToOpen" data-bi-name="ExpandMenuIcon-SetToOpen" title="Toggle the navigation pane" aria-label="Toggle the navigation pane" aria-expanded="false">
+                    <div class="onedash-hamburger-icon">
+                        <div class="win-icon win-icon-GlobalNavButton"></div>
+                    </div>
+                </button>
+            </div>
+                <div class="onedash-container" data-bi-area="OneDashboardSide">
+                        <nav id="onedash-side-navigation" class="onedash-side-navigation mobileHide ">
+                            <div id="onedash-hamburger">
+                                <button class="onedash-hamburger-btn" data-bi-slot="1" data-bi-id="ExpandMenu-SetToOpen" data-bi-name="ExpandMenuIconSetToOpen" title="Toggle the navigation pane" aria-label="Toggle the navigation pane" role="button" aria-expanded="false" aria-controls="onedash-side-navigation">
+                                    <div class="onedash-hamburger-icon"><div class="win-icon win-icon-GlobalNavButton"></div></div>
+                                </button>
+                            </div>
+                            <div id="onedash-navigation-list" class="onedash-navigation-list">
+
+    <a href="/dashboard/home" id="onedash-nav-home" class="leftnav-wksp-event" data-internal="WorkspaceTemplates">
+        <div class="onedash-navigation-icon" title="Home"><span class="win-icon win-icon-Home"></span></div>
+        <div class="onedash-navigation-category">Home</div>
+    </a>
+
+    <div id="onedash-top-menus">
+            <a href="/dashboard/home" id="internal-nav-partnercenter-title" class="leftnav-wksp-event onedash-nav-noun " data-internal="InternalTemplates" style="" data-workspaceid="">
+                <div class="onedash-navigation-icon" title="Partner Center"><span class="ws-icon ws-icon-partnercenter"></span></div>
+                <div class="onedash-navigation-category">Partner Center</div>
+            </a>
+            <a href="/en-us/dashboard/apps-and-games/overview" id="workspace-nav-appsandgames-title" class="leftnav-wksp-event onedash-nav-noun " data-internal="WorkspaceTemplates" style="" data-workspaceid="rr3q88o">
+                <div class="onedash-navigation-icon" title="Apps and games"><span class="ws-icon ws-icon-AppsAndGames"></span></div>
+                <div class="onedash-navigation-category">Apps and games</div>
+            </a>
+            <a href="/en-us/dashboard/insights/analytics/overview" id="workspace-nav-insights-title" class="leftnav-wksp-event onedash-nav-noun " data-internal="WorkspaceTemplates" style="" data-workspaceid="lks5q3i">
+                <div class="onedash-navigation-icon" title="Insights"><span class="ws-icon ws-icon-Insights"></span></div>
+                <div class="onedash-navigation-category">Insights</div>
+            </a>
+            <a href="/en-us/dashboard/payouts/reports/incentivepayments" id="workspace-nav-payouts-title" class="leftnav-wksp-event onedash-nav-noun " data-internal="WorkspaceTemplates" style="" data-workspaceid="227z4kg">
+                <div class="onedash-navigation-icon" title="Payouts"><span class="ws-icon ws-icon-Payout"></span></div>
+                <div class="onedash-navigation-category">Payouts</div>
+            </a>
+            <a href="/dashboard/v2/support/servicerequests" id="workspace-nav-vnext-support-title" class="leftnav-wksp-event onedash-nav-noun " data-internal="WorkspaceTemplates" style="" data-workspaceid="ck2ic0y">
+                <div class="onedash-navigation-icon" title="Help &#x2B; support"><span class="ws-icon ws-icon-Support"></span></div>
+                <div class="onedash-navigation-category">Help &#x2B; support</div>
+            </a>
+    </div>
+
+                            </div>
+                        </nav>
+                </div>
+
+            <a href="https://www.microsoft.com" target="_blank" data-bi-slot="1" data-bi-id="Header-Microsoft-Link" data-bi-name="MicrosoftLogo" id="onedash-header-microsoftIcon" class="win-icon-composite win-icon-size-xs" aria-label="Microsoft">
+                <span class="win-icon win-icon-MicrosoftLogoRed win-icon-size-xs" style="color: #f25022; -ms-high-contrast-adjust: none;"></span>
+                <span class="win-icon win-icon-MicrosoftLogoGreen win-icon-size-xs" style="color: #7fba00; -ms-high-contrast-adjust: none;"></span>
+                <span class="win-icon win-icon-MicrosoftLogoBlue win-icon-size-xs" style="color: #00a4ef; -ms-high-contrast-adjust: none;"></span>
+                <span class="win-icon win-icon-MicrosoftLogoYellow win-icon-size-xs" style="color: #ffb900; -ms-high-contrast-adjust: none;"></span>
+            </a>
+            <span id="microsoftLogoText" class="onedash-header-title-text">Microsoft Partner Center</span>
+
+
+    </div>
+        <div class="onedash-header-search">
+            <div id="onedash-header-search-wrapper">
+                <div id="onedash-header-search-box-wrapper">
+                    <div id="onedash-search-results-wrapper">
+                        <span id="onedash-header-search-icon" class="win-icon win-icon-Search"></span>
+                        <input id="onedash-header-search-box" class="onedash-header-search-box" type="search" placeholder="Search" aria-label="Search Partner Center, as you type results will appear dynamically.  Press tab to go to your results." tabindex="0" />
+                        <div id="onedash-search-results" style="display: none" aria-live="polite">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="onedash-header-actions pull-right">
+        <div id="onedash-header-internalTools" style="display:none; ">
+            <div id="internalToolsLabel">Internal</div>
+        </div>
+        
+<script type="text/javascript">
+    $(document).ready(function () {
+        commonRequire(["gleam"]);
+    });
+</script>
+
+    <button id="notificationGleam" title="Notifications" aria-label="Notifications" aria-haspopup="true" aria-controls="notificationList" data-bi-slot='0' data-bi-id='Gleam' data-bi-name='NotificationGleam'>
+        <span class="win-icon win-icon-Ringer"></span>
+        <div class="hasNotifications" style="display:none;">
+            <span id="newNotificationsCount"></span>
+        </div>
+    </button>    
+<div id="notificationList" class="onedash-header-expandColumn" role="dialog">
+        <script src="https://harmony.azureedge.net/npm/@harmony/action-center-enablers/0.5.16/hoc/action-center-hoc.js" type="module" defer></script>
+        <he-ext-action-center-hoc id="action-center-flyout" scope-query-selector="he-ext-action-center-hoc" style="height:100%" integration-id="pc"></he-ext-action-center-hoc>        
+</div>
+        <button id="onedash-header-actions-list-mobile" class="pull-right" data-bi-id="OneDashMobileMenu" data-bi-name="OneDashMobileMenuLink" aria-label="Show more options" title="Show more options"><span class="win-icon win-icon-More"></span></button>
+        <ul id="onedash-header-actions-list">
+            <li>
+                <button id="feedbackIcon" data-bi-slot="5" data-bi-id="Header-FeedbackLink" data-bi-name="Header-FeedbackIcon" title="Feedback" aria-label="Feedback"><span class="win-icon win-icon-Emoji2"></span><span class="mobile-text">Feedback</span></button>
+            </li>
+            <li>
+                <button id="supportIcon" data-bi-slot="6" data-bi-id="Header-Support-EntryPoint" data-bi-name="Header-SupportIcon" title="Help" aria-label="Help" aria-expanded="false" aria-controls="onedash-support-menu"><span class="win-icon win-icon-Help"></span><span class="mobile-text">Help</span></button>
+
+
+
+<nav id="onedash-support-menu" class="onedash-header-expandColumn" aria-hidden="true" tabindex="-1" aria-labelledby="supportPanelTitle">
+    <div id="onedash-support-pane">
+        <div id="onedash-support-pane-content">
+            <div class="support-pane-title pull-left">Help &#x2B; support</div>
+            <div class="clear"></div>
+            <div id="onedash-support-section" class="onedash-support-section">
+
+                    <ul class="supportProgramList">
+                        <li>
+                            <a href="/dashboard/support/servicerequests/create" data-bi-id="Workspace-HeaderSupport" data-bi-name="Workspace-HeaderSupport">Support</a>
+                        </li>
+                    </ul>
+                        <script src="https://harmony.azureedge.net/npm/@harmony/ext-support/3.11.1/features/support-panel-config/support-panel-config.js" type="module" defer></script>
+                        <he-ext-support-panel-config integration-id="pc">
+                            <he-ext-help-support integration-id="pc" />
+                        </he-ext-support-panel-config>
+            </div>
+                <button id="workspaceTourLink" data-bi-id="WorkspaceTourLink" data-bi-name="WorkspaceTour" style="display: none;">
+                    <span class="win-icon win-icon-MapDirections"></span> Tour the home page
+                </button>
+        </div>
+    </div>
+</nav>            </li>
+            <li>
+                <button id="settingsCog" data-bi-slot="7" data-bi-id="Header-Settings-EntryPoint" data-bi-name="Header-AccountSettingsIcon" title="Settings" aria-label="Settings" aria-expanded="false" aria-controls="onedash-settings-menu"><span class="win-icon win-icon-Settings"></span><span class="mobile-text">Account settings <span class="win-icon win-icon-ChevronDown"></span></span></button>
+
+
+
+<nav id="onedash-settings-menu" class="onedash-header-expandDropdown" aria-hidden="true" tabindex="-1">
+    <ul class="onedash-settings-actions">
+            <li><a href="/dashboard/v2/account-settings/overview">Account settings</a></li>
+
+        <li><a href="/dashboard/v2/action-center/mypreferences">My preferences</a></li>
+        <li class="settingsDivider" role="none"></li>
+
+        <li id="onedash-darkmode-listitem" class="onedash-settings-toggle" data-status="False">
+            <span class="onedash-darkmode-text">Dark mode</span>
+            <button id="onedash-darkmode-toggle" class="onedash-header-toggle pull-right" type="button" aria-label="Dark mode" data-toggle="button" aria-pressed="false" autocomplete="off" data-bi-slot="7.8" data-bi-id="DarkModeToggle" data-bi-name="DarkMode"></button>
+        </li>
+        <li id="onedash-culture-listitem"><a href="/locale" id="onedash-current-locale" data-bi-slot="7.6" data-bi-id="LocaleLink" data-bi-name="Locale" aria-label="Change locale, your current locale is set to English (United States)">English (United States)</a></li>
+        <li id="onedash-about-listitem"><button id="aboutEntry" class="btn-link" data-bi-slot="7.7" data-bi-id="AboutLink-HeaderSettings" data-bi-name="About-HeaderSettings">About</button></li>
+    </ul>
+</nav>            </li>
+            <li>
+                <button id="onedash-me-control" data-bi-slot="8" data-bi-id="Header-MeControl-EntryPoint" data-bi-name="Header-MeControlIcon" label="your account" title="your account" role="button" aria-expanded="false" aria-controls="onedash-me-control-menu"><span id="onedash-me-name"></span><img class="onedash-me-photo" alt="" aria-label="" /></button>
+                <nav id="onedash-me-control-menu" class="onedash-header-expandColumn" aria-label="your account" aria-hidden="true" tabindex="-1">
+                    <div id="onedash-me-control-user">
+                        <div id="onedash-me-control-image">
+                            <img alt=" " />
+                        </div>
+                        <div id="onedash-me-control-userInfo">
+                            <div id="onedash-me-control-userName"> </div>
+                            <div id="onedash-me-control-email">freyajshaw@yahoo.com</div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div id="onedash-me-control-directoryPicker">
+
+
+
+    <div id="mecontrol-accountPicker">
+        <div id="meControlAccountPickerContainer" style="display:none;"></div>
+    </div>
+                    </div>
+                    <div id="onedash-me-control-bottom">
+                                                <div id="onedash-me-control-switchAccounts">
+                            <a data-bi-slot="8.2" data-bi-id="SwitchAccountsLink" data-bi-name="SwitchAccounts">Sign in with another account</a>
+                        </div>
+                        <div id="onedash-me-control-signout">
+                            <a href="/aad?action=signout" data-bi-slot="8.3" data-bi-id="SignOutLink" data-bi-name="SignOut" class="btn">Sign out</a>
+                        </div>
+                    </div>
+                </nav>
+            </li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</header>
+
+<partnercenter-breadcrumb id="breadcrumbcomponent" data-string="Home" data-overflow="Toggle breadcrumb menu links" data-ready="true" data-workspaceid="">
+    <div id="partnercenter-breadcrumbs">
+            <ul>
+            <li>
+                <a id="partnercenter-breadcrumb-home" class="breadcrumb-event" href="/dashboard/home" data-bi-id="breadCrumbHome" data-bi-name="breadCrumbHome">Home</a>
+                <span class="win-icon win-icon-ChevronRight"></span>
+            </li>
+            <li>
+                <span>Apps and games</span>
+            </li>
+        </ul>
+    </div>
+</partnercenter-breadcrumb>
+
+<script type="text/javascript">
+    var searchStrings = {
+        NoResults: 'No results found',
+        LoadingResultsFromDocs: 'Loading results from docs.microsoft.com',
+        LoadingResultsFromBing: 'Loading results from Bing',
+        SeeAll: 'See all'
+    };
+</script>
+
+<input id="IsOfficeUser" name="IsOfficeUser" type="hidden" value="false" />
+<input id="IsSidePanelOpen" name="IsSidePanelOpen" type="hidden" value="false" />
+<input id="SearchCategories" name="SearchCategories" type="hidden" value="Products,Destinations, Documentation, General information" />
+<input id="IsInternal" name="IsInternal" type="hidden" value="false" />
+<input id="UserFlights" name="UserFlights" type="hidden" value="[&quot;AnalyticsMicroservice&quot;,&quot;AppManagement&quot;,&quot;CRMLicenseAnalytics&quot;,&quot;DistiVar&quot;,&quot;NotificationPreference&quot;,&quot;PaymentTermEnabled&quot;,&quot;PublishingProductAndServiceType&quot;,&quot;ReferralsExitInterview&quot;,&quot;ServiceHealth&quot;,&quot;ServiceHealthNotificationPreference&quot;,&quot;ServiceRequestAttachment&quot;,&quot;ServiceRequestV2&quot;,&quot;SPAAppRegistration&quot;,&quot;ViewAuditRecords&quot;,&quot;ViewPartnersCorner&quot;,&quot;ViewPartnerUsageAnalytics&quot;,&quot;PartnerCorner&quot;,&quot;ReferralsTile&quot;,&quot;CommerceMicroSite&quot;,&quot;WatchdogFlight&quot;,&quot;ZeroTouchDeployment&quot;,&quot;AzureUsageAnalytics-Perf&quot;,&quot;RemoveResellerRelationship&quot;,&quot;EnableSupportedCountryValidation&quot;,&quot;RemoveResellerRelationshipTwoTier&quot;,&quot;EnableOfflineOfferPurchase&quot;,&quot;AllowLegalAddressUpdateAllStatus&quot;,&quot;ReadContractsFromAES&quot;,&quot;ProxyBillingProfileUpdate&quot;,&quot;EnableRIPurchase&quot;,&quot;EnableConnectedAccountAuthZ&quot;,&quot;ReadProgramStatusesFromAES&quot;,&quot;AesBillingProfile&quot;,&quot;DisablePostInitializationCheck&quot;,&quot;ReadAgreementsFromAES&quot;,&quot;EnableAccountConfigurations&quot;,&quot;EnableUnAuthMpnAssociation&quot;,&quot;NoTestHeaders&quot;,&quot;EnableMsaMpnAssociation&quot;,&quot;EnableAesConnectedAccountAuthZ&quot;,&quot;EnableMapsOptions&quot;,&quot;RedirectToPartner&quot;,&quot;ExcludeNationalCloudsFromPartnerRedirection&quot;,&quot;NewAadTokenCache&quot;,&quot;AD_MONETIZATION_AFFILIATE&quot;,&quot;AD_PER_WM_FEATURE&quot;,&quot;AD_PERF_FEATURE&quot;,&quot;AdMediator_BrokerUI&quot;,&quot;AdPerformance_Adbroker&quot;,&quot;AdPerformance_ElasticSearchApi&quot;,&quot;ADSMONETIZATION_ACCESS_CONTROL&quot;,&quot;ANALYTICS_IHVHEALTH&quot;,&quot;APP_PROMOTION_BANNERINSTL&quot;,&quot;APP_PROMOTION_BILLING_INVOICE&quot;,&quot;APP_PROMOTION_BILLMENOWFEATURE&quot;,&quot;APP_PROMOTION_COUPONS&quot;,&quot;APP_PROMOTION_DISCOVERABILITY&quot;,&quot;APP_PROMOTION_HOUSEPLUS&quot;,&quot;APP_PROMOTION_SEGMENTS&quot;,&quot;APP_PROMOTION_V3&quot;,&quot;DCENG&quot;,&quot;DCENG_APP_LAUNCH_RATE&quot;,&quot;EXPNEXT&quot;,&quot;FLIGHT_PICKER_FEATURE&quot;,&quot;GranularPermission&quot;,&quot;MONETIZATION_ACCESS_CONTROL&quot;,&quot;MultiuserInvitation&quot;,&quot;PROMOTION_ACCESS_CONTROL&quot;,&quot;PromotionESApi&quot;,&quot;TOKENSV2&quot;,&quot;TOKENSV2EXPIRY&quot;,&quot;TOKENSVANITY&quot;,&quot;Monetization_TargetedOffer&quot;,&quot;DCENG_filters&quot;,&quot;AdPerformance_Adbroker_lkg&quot;,&quot;APP_PROMOTION_NATIVE&quot;,&quot;ProductWeb&quot;,&quot;PICARD_PREFERENCE&quot;,&quot;AdsMonetization_OneDashUI&quot;,&quot;EXTENSIBLE_REGISTRATION&quot;,&quot;AdsMonetization_HideAffiliateSection&quot;,&quot;server_focusnav&quot;,&quot;FdSpa&quot;,&quot;ProductWeb_Pages&quot;,&quot;DesktopProgram&quot;,&quot;Collaborate_Notification&quot;,&quot;PICARD_SETTINGS&quot;,&quot;DCENG_multi_app_notification&quot;,&quot;AvailabilityOpenPricing&quot;,&quot;AgreementsV3&quot;,&quot;ProductWeb_Overview&quot;,&quot;PackageWebIdentity&quot;,&quot;PackageWebPackages&quot;,&quot;PackageWebManagePackages&quot;,&quot;Collaborate_SocialFeedback&quot;,&quot;SubmissionWeb_CertStatus&quot;,&quot;CpmEmailOptout&quot;,&quot;Subscription_GA&quot;,&quot;ANALYTICS_HDC_WIN10DRIVERFAILURES&quot;,&quot;PackageWebEraStatus&quot;,&quot;CrossPlatform&quot;,&quot;NotificationCache&quot;,&quot;Engagement_Preferences&quot;,&quot;AdPerformance_ViewabilityMetric&quot;,&quot;SubmissionWeb_Prefetch&quot;,&quot;Collaborate_Subscription&quot;,&quot;PartnerCompetencyPerformanceData&quot;,&quot;EnableMpnConnectedAccount&quot;,&quot;PartnerUserSkillsReportCSVDownload&quot;,&quot;AlignPMCADToPCEnrollmentDate&quot;,&quot;EnableMAPSReenrollment&quot;,&quot;ANALYTICS_XDP&quot;,&quot;ANALYTICS_ISV&quot;,&quot;OfficeStoreRegistrationLink&quot;,&quot;AppdevProgramNameChange&quot;,&quot;DesktopApiVnext&quot;,&quot;AllTenants&quot;,&quot;RelationshipExtension&quot;,&quot;MPNOverview&quot;,&quot;EnableCustomerBootstrapping&quot;,&quot;Insights_Overview_v2&quot;,&quot;SEGMENTS_CHURN&quot;,&quot;RelationshipRequestMac&quot;,&quot;RemoveSfbApiCallMpnRoleAssignment&quot;,&quot;OneDash_PartnerInsights&quot;,&quot;SubmissionWeb_JaguarPublish&quot;,&quot;MPNReportEnabled&quot;,&quot;CSPAzureChurnPrediction&quot;,&quot;ModernUsageUX&quot;,&quot;Insights_Redirects&quot;,&quot;DisableResellerSettings&quot;,&quot;EnableModernOfficeR3&quot;,&quot;ProductGroupExport&quot;,&quot;ModernReconPhase1&quot;,&quot;ResellerNameFix&quot;,&quot;ModernInvoiceServiceCost&quot;,&quot;ShowMsLearnOnLeftNav&quot;,&quot;CSPSoftwareSubsExpiry&quot;,&quot;EnableTaxReceipt&quot;,&quot;PAYOUTS_ZIP_DOWNLOAD&quot;,&quot;Auto_Redirect_XfusUpload&quot;,&quot;OfficeProgramSupplementalInfo&quot;,&quot;EnableModernOffice&quot;,&quot;PBIMigration_EnableNotification&quot;,&quot;PartnerDashboardPreview&quot;,&quot;EnableModernOfficeR2M1&quot;,&quot;EnableTaxWithholding&quot;,&quot;AZURE_ISV_MARKETPLACEINSIGHTS&quot;,&quot;EnableLearningStarterKit&quot;,&quot;PFX_Billing_EnableModernAzureSpendingNotifications&quot;,&quot;EnableFedgovBillingOverview&quot;,&quot;EnableModernOfficeSubscriptionTransitions&quot;,&quot;ViewMargins&quot;,&quot;ENABLE_D365OFFERS_OVERVIEW&quot;,&quot;AzureAppOfferLevelACR&quot;,&quot;EnableMPNLeftNavNonAdmin&quot;,&quot;HistoryFeature&quot;,&quot;OMEX_CHANNELS&quot;,&quot;ShowDriverFailures&quot;,&quot;EnableDynamicsScoreProduct&quot;,&quot;DisableBillingTrendChart&quot;,&quot;MarketplaceSalesPage&quot;,&quot;PCMEnableAsyncEducationVettingUX&quot;,&quot;AZURE_ISV&quot;,&quot;ManagedService_Jit&quot;,&quot;EnableLatestPricingScopeContract&quot;,&quot;SandboxOptOutFlight&quot;,&quot;ModernAzureTransfers&quot;,&quot;LogoBuilderLaunch&quot;,&quot;ACQUISITIONSUI_DW_REPORTS&quot;,&quot;PCMEnforceWave2EnhancedDataCollection&quot;,&quot;SEGMENTS_USAGE&quot;,&quot;EnableUnifiedExperienceMPNEnrolment&quot;,&quot;Listing_Cosell_CacheOptimization&quot;,&quot;TradeScreenInReviewRestriction&quot;,&quot;CompareFeature&quot;,&quot;ANALYTICS_SOURCE_SELECT&quot;,&quot;PCMEnableCustomerEnhancedDataCollection&quot;,&quot;MarketplacePriceSheets&quot;,&quot;Anomaly_CMP&quot;,&quot;PaymentOnAccountPhase1&quot;,&quot;Listing_CloudHealth&quot;,&quot;EnableMeetingTeams&quot;,&quot;EnablePxAccExpMpnAssociationStandalone&quot;,&quot;CSPModernAzureAnalytics&quot;,&quot;NetPromoter&quot;,&quot;Marketplace&quot;,&quot;CSP_MPA_Analytics&quot;,&quot;CheckMpnOfferingEnrollmentResource&quot;,&quot;ModernInstallsPipeline&quot;,&quot;XboxGenericMetadata&quot;,&quot;FulfillmentSelfServeSoftware&quot;,&quot;EnableModernAzure&quot;,&quot;EnableSQLSUSERIPurchase&quot;,&quot;BingSearchIntegration&quot;,&quot;GlobalAdminDiscovery&quot;,&quot;SidePanelSupport&quot;,&quot;ModernReviewsPipeline&quot;,&quot;NIKEN&quot;,&quot;LargeReconPhase1&quot;,&quot;ResellerOptOutFlight&quot;,&quot;PCMEnableRemovePartnerRelationship&quot;,&quot;ActionableItemsAPI&quot;,&quot;ModernUsagePipeline&quot;,&quot;TrimAuthCookie&quot;,&quot;ACQUISITIONS_REVENUE&quot;,&quot;ANALYTICS_XBOX360_EXPORT&quot;,&quot;EnableCustomMetersSaasPurchase&quot;,&quot;ISV_Overview_Offers_GA&quot;,&quot;ConsoleGen9Features&quot;,&quot;ANALYTICS_LICENSEUSAGE&quot;,&quot;ANALYTICS_ALLPRODUCTS_EXPORT&quot;,&quot;REALTIME_FEATURE&quot;,&quot;SharedServicesCommercePage&quot;,&quot;INDIRECTRESELLERANALYTICS&quot;,&quot;PCEnableAVSFullValidation&quot;,&quot;VMImageInputSelection&quot;,&quot;MIX_Reuse_Tech_Config_Cobalt&quot;,&quot;QuoteCenterTest&quot;,&quot;ANALYTICS_WIN32_SYMBOLUPLOAD&quot;,&quot;ProgramDataCollection&quot;,&quot;enableLOC&quot;,&quot;CSP_Direct_TTM_Analytics&quot;,&quot;RelationshipRequestSfb&quot;,&quot;EnableAzureProduct&quot;,&quot;ENGAGEMENT_LANGUAGE&quot;,&quot;AzureIoTAOBO&quot;,&quot;EnableCustomerEducationVerification&quot;,&quot;PartnerInsights_vNext&quot;,&quot;EnableDefaultPurchaseOrderNumberMcapiSync&quot;,&quot;EnableTurkeyVatIdCollection&quot;,&quot;AZURE_ISV_AMCHARTS&quot;,&quot;MIX_Enhanced_Module_Status&quot;,&quot;PartnerInsights_vNext3&quot;,&quot;EnableCompanyNameUpdate&quot;,&quot;GccCustomerCreation&quot;,&quot;EnableModernBootstrap&quot;,&quot;EnableParetoAnalysis&quot;,&quot;ShowPartnerContributiononLeftNav&quot;,&quot;pkgcert&quot;,&quot;EnableMpnIdChangeCspWithMpn&quot;,&quot;CSP_SUBSCRIPTIONS_EXPIRING_SOON&quot;,&quot;EnableRiSelfServePolicy&quot;,&quot;EnableModernCustomerCreation&quot;,&quot;EnableMFAAnnouncement&quot;,&quot;LegacyInvoiceInModern&quot;,&quot;MIX_DLC_Flighting&quot;,&quot;UpdateBillingFrequency&quot;,&quot;BadgingUI&quot;,&quot;CommonUxJsDelayLoad&quot;,&quot;InternalCatalog&quot;,&quot;PartnerPreviewV2&quot;,&quot;EnableReportingUserRoles&quot;,&quot;SEGMENTS_NEWATTRIBUTES&quot;,&quot;ANALYTICS_COHORTS&quot;,&quot;ANALYTICS_DOWNLOAD_ALL_REPORTS&quot;,&quot;PreOrderStatesNRT&quot;,&quot;Co-sell_Analytics&quot;,&quot;ModernHealthDataPipeline&quot;,&quot;UsePurchaseVersion0430&quot;,&quot;D2ITransfers&quot;,&quot;PartnerCenterV2Experiment&quot;,&quot;HomeISVExperience&quot;,&quot;AppPickerId&quot;,&quot;EnableMergePartnerDeveloperSettings&quot;,&quot;MPNOverview&quot;,&quot;EnableAddPublishers&quot;,&quot;EnableStartPage&quot;,&quot;EnableAccountsMerge&quot;,&quot;EnablePreferencesPage&quot;,&quot;EnableDunsMPNEnrolmentIntegration&quot;,&quot;EnableIsvBillingProfile&quot;,&quot;XfusV2Uploader&quot;,&quot;WorkspacePreview&quot;]" />
+<input id="ServerUrl" name="ServerUrl" type="hidden" value="https://partner.microsoft.com/en-us/dashboard/win32apps/9cbbf2b1-26b4-4f16-b53c-e6b159701f38/submissions/draftsubmission/listings" />
+<input id="NationalCloud" name="NationalCloud" type="hidden" value="" />
+<input id="AppPickerId" name="AppPickerId" type="hidden" value="true" />
+<input id="BingSearchIntegration" name="BingSearchIntegration" type="hidden" value="true" />
+<input id="ActiveScopes" name="ActiveScopes" type="hidden" value="Developer" />
+<input id="FirmographicProfile" name="FirmographicProfile" type="hidden" value="false" />
+
+<div id="onedash-focusnav" class=" en-us" aria-hidden="true">
+
+        <div class="onedash-breadcrumb-container" style="display: none;">
+            <a class="onedash-breadcrumb-innercontainer">
+                <span class="win-icon win-icon-Back onedash-breadcrumb-icon"></span>
+                <span class="ondedash-breadcrumb-text"></span>
+            </a>
+        </div>
+                            <script>
+                        $('body').removeClass('without-focus-nav');
+                    </script>
+
+
+<div id="taskMenu" class="col-xs-6 leftMenu focusNavWrapper ">
+    <button id="taskMenuMobileOpener" class="buttonReset" title="Toggle the task menu" aria-label="Toggle the task menu"><span class="win-icon win-icon-DoubleChevronLeftMedMirrored"></span></button>
+    <nav id="common-focusNav" data-bi-area="common-leftNav" class="devcenter-nav mobileHide" data-focusnav-template="defaultproduct" data-focusnav-id="9CBBF2B1-26B4-4F16-B53C-E6B159701F38" data-source-url="/dashboard/win32apps/api/v1/focusnav/{productId}/{submissionId}" aria-label=" page menu">
+        
+<ul>
+                <li id="leftnav-product-navigation" class="" data-focusnavid="leftnav-product-navigation" data-navcheck="" style="display:none;" taskMenuItemGroupId="none">
+                    <a href="" target="_self" data-focusnavhighlight="" data-bi-id="App overview" data-bi-name="App overview" class="" aria-current="false" onclick="reevaluateHref(event, this, '', '')">App overview</a>
+                </li>
+</ul>            </nav>
+    <input type="hidden" id="CurrentLeftNav" name="CurrentLeftNav" value="[{&quot;id&quot;:&quot;leftnav-product-navigation&quot;,&quot;showAsWorkspace&quot;:false,&quot;dataBiId&quot;:null,&quot;dataBiSlot&quot;:null,&quot;title&quot;:&quot;App overview&quot;,&quot;href&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;,&quot;type&quot;:0,&quot;highlightPattern&quot;:&quot;&quot;,&quot;children&quot;:null,&quot;childrenLinks&quot;:{&quot;LeftNavLinks&quot;:null,&quot;TopLevelNode&quot;:false,&quot;IsOpen&quot;:false},&quot;isHidden&quot;:true,&quot;isDisabled&quot;:false,&quot;target&quot;:&quot;_self&quot;,&quot;leftNavItemType&quot;:1,&quot;frontEndChecks&quot;:null,&quot;classAttribute&quot;:null,&quot;workspaceId&quot;:null,&quot;workspacePreview&quot;:true,&quot;ProgramsToHideCondition&quot;:2,&quot;TaskMenuItemGroupUrls&quot;:null,&quot;LegacyLayout&quot;:null,&quot;TaskMenuItemGroupId&quot;:null,&quot;RootElementBehavior&quot;:{&quot;ShowSideNav&quot;:true,&quot;ShowHomeCard&quot;:true},&quot;WorkspaceRoot&quot;:null,&quot;ProgramClaimCombinationCondition&quot;:0}]" />
+    <input type="hidden" id="ProductId" name="ProductId" value="9CBBF2B1-26B4-4F16-B53C-E6B159701F38" />
+    <input type="hidden" id="ProductType" name="ProductType" value="App" />
+</div></div>
+
+
+<div id="deltaUiWrapper" role="presentation"></div>
+
+<div id="aboutModal" style="display: none" aria-hidden="true">
+    <div class="overlay"></div>
+    <div id="aboutModalWrapper" class="onedash-modal-wrapper" data-bi-area="OneDashboardAboutDialog" role="dialog" aria-labelledby="aboutModalTitle">
+            <div id="aboutModalTitle" class="text-title c-subheading-3" aria-level="1" role="heading">&copy; Microsoft <span id="aboutCurrentYear"></span></div>
+        <div class="aboutModalContent" id="aboutModalDeveloper">
+            <div class="text-title c-subheading-3" role="heading" aria-level="2">Microsoft Partner Center</div>
+            <div class="aboutModalLinks">
+                    <a href="https://www.microsoft.com/en-us/sitemap1.aspx" target="_blank" id="aboutSiteMapLink" data-bi-slot="6" data-bi-id="SitemapLink" data-bi-name="Sitemap" class="c-hyperlink">Sitemap</a>
+                    <a href="https://support.microsoft.com/contactus" target="_blank" data-bi-slot="1" data-bi-id="ContactUsLink" data-bi-name="ContactUs" class="c-hyperlink">Contact us</a>
+                    <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank" data-bi-slot="2" data-bi-id="PrivacyAndCookiesLink" data-bi-name="PrivacyAndCookies" class="c-hyperlink">Privacy and cookies</a>
+                    <a href="https://go.microsoft.com/fwlink/?LinkID=206977" target="_blank" data-bi-slot="3" data-bi-id="TermsOfUseLink" data-bi-name="TermsOfUse" class="c-hyperlink">Terms of use</a>
+                    <a href="https://go.microsoft.com/fwlink/?LinkID=530144" target="_blank" data-bi-slot="1.6" data-bi-id="MicrosoftServiceAgreement" data-bi-name="MicrosoftServiceAgreement" class="c-hyperlink">Service agreement</a>
+                    <a href="https://www.microsoft.com/trademarks" target="_blank" data-bi-slot="4" data-bi-id="TrademarkLink" data-bi-name="Trademark" class="c-hyperlink">Trademark</a>
+                    <a href="https://choice.microsoft.com/" target="_blank" data-bi-slot="5" data-bi-id="AboutOurAdsLink" data-bi-name="AboutOurAds" class="c-hyperlink">About our ads</a>
+                    <a href="https://go.microsoft.com/fwlink/?linkid=2121428" target="_blank" class="c-hyperlink frenchDisclosure">Accessibilité: partiellement conforme</a>
+                    <a href="https://www.microsoft.com/it-it/accessibility/declarations" target="_blank" class="c-hyperlink italianDisclosure">Dichiarazione di accessibilità</a>
+                            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="aboutModalButton">
+            <button id="aboutDialogClose" class="btn btn-primary pull-right c-button f-primary">Close</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        commonRequire(["common-directory"]);
+        commonRequire(["directoryPane"]);
+    });
+</script>
+
+<div id="directoryPane" class="onedash-header-expandColumn" aria-hidden="true">
+    <div id="directoryPaneBusy" class="progress ring ring-large indeterminate ring-alt" style="display: none;">
+        <div class="indeterminate progress-bar" role="progressbar">
+            <div class="indeterminate-ring indeterminate-large indicator-1"></div>
+            <div class="indeterminate-ring indeterminate-large indicator-2"></div>
+            <div class="indeterminate-ring indeterminate-large indicator-3"></div>
+            <div class="indeterminate-ring indeterminate-large indicator-4"></div>
+            <div class="indeterminate-ring indeterminate-large indicator-5"></div>
+        </div>
+    </div>
+    <div class="dashboard-hub-container">
+        <div class="dashboard-hub-header">
+            Azure AD directories
+        </div>
+    </div>
+    <p class="directory-description">Partner Center uses Azure Active Directory for identity and access management. You can work in Partner Center as a user for only one directory at a time. <a href="https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis" target="_blank" class="directoryInfoLearnMoreLink" aria-label="Directory information">Learn more</a></p>
+    <p class="directory-description">Select the star next to a directory to set it as your default when signing in to Partner Center.</p>
+
+    <div id="directoryPaneErrorMessage">Sorry, something went wrong. Please try again later.</div>
+    <div id="directoryPaneContent">
+    </div>
+    <input id="ProgramDataCollectionFlight" name="ProgramDataCollectionFlight" type="hidden" value="true" />
+</div>
+<div id="FRE-tour-overlay" style="display: none"></div>
+<div id="tour-module" class="tour-module" data-bi-area="OneDashboardTourModule" style="display: none">
+    <div class="tour-module-container">
+        <div id="tour-title"></div>
+        <div id="tour-content"></div>
+        <div class="tour-buttons">
+            <button class="pull-left" id="tour-module-button-left" data-bi-slot="1" data-bi-id="OneDashTour_ButtonLeft" data-bi-name="ButtonLeft"></button>
+            <button class="pull-right" id="tour-module-button-right" data-bi-slot="2" data-bi-id="OneDashTour_ButtonRight" data-bi-name="ButtonRight"></button>
+            <span id="tour-module-progress" class="pull-right"></span>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+    <div id="ws-homepageTourForward" style="display: none">
+        <div class="overlay"></div>
+        <div class="onedash-modal-wrapper tour-modal">
+            <div class="onedash-modal-content">
+                <h2>Welcome to workspaces</h2>
+                <p>To take a tour of the new experience, go to the home page.</p>
+                <div class="onedash-modal-buttons">
+                    <button id="wsforward-letsgo" role="button" class="btn btn-primary">Go to home</button>
+                    <button id="wsforward-nothanks" role="button" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="common-main-loading hidden ">
+    <div class="loading-text">Loading</div>
+    <div class="progress indeterminate">
+        <div class="progress-bar indeterminate indeterminate-bar" role="progressbar">
+            <div class="indeterminate-indicators">
+                <div class="indeterminate-indicator indicator-1">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-2">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-3">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-4">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-5">
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="common-content-loading  focusnav">
+    <div class="loading-text">Loading</div>
+    <div class="progress indeterminate">
+        <div class="progress-bar indeterminate indeterminate-bar" role="progressbar">
+            <div class="indeterminate-indicators">
+                <div class="indeterminate-indicator indicator-1">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-2">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-3">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-4">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-5">
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        setTimeout(function () {
+            $('.common-content-loading').fadeOut(1000);
+        }, 5000);
+    </script>
+</div>
+
+<div class="common-content-refreshing">
+    <div class="loading-text">Working on it</div>
+    <div class="progress indeterminate">
+        <div class="progress-bar indeterminate indeterminate-bar" role="progressbar">
+            <div class="indeterminate-indicators">
+                <div class="indeterminate-indicator indicator-1">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-2">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-3">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-4">
+                    <div class="dot"></div>
+                </div>
+                <div class="indeterminate-indicator indicator-5">
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alert-band" id="onedash-alert-band" style="display: none;">
+    <div id="storageAlert">
+        <div class="alert with-icon alert-info alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true"><i class="win-icon win-icon-Cancel"></i></span>
+            </button>
+            <span class="alert-icon"><i class="win-icon win-icon-Info"></i></span>
+            <div class="row">
+                <div class="col-xs-24">
+                    <p>Some Dev Center features may not work properly because your current browser isn&#x2019;t allowing browser storage. This may be a result of using private browsing mode.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="browserAlert">
+        <div class="alert with-icon alert-warning alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true"><i class="win-icon win-icon-Cancel"></i></span>
+            </button>
+            <span class="alert-icon"><i class="win-icon win-icon-Info"></i></span>
+            <div class="row">
+                <div class="col-xs-24">
+                    <p>Partner Center no longer supports Internet Explorer 11. Start using the new Microsoft Edge for speed, security and privacy. <a href="https://www.microsoft.com/edge?form=MY01R2&OCID=MY01R" target="_blank">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="new-feature-modal-dialog" data-bi-area="whats-new-dialog" style="display: none">
+    <div class="overlay"></div>
+    <div class="onedash-modal-wrapper">
+        <div class="onedash-modal-icon">
+            <div class="win-icon-composite">
+                <span class="win-icon win-icon-TaskStateCircleFull"></span>
+                <span class="win-icon win-icon-Lightbulb"></span>
+            </div>
+        </div>
+        <div class="onedash-modal-content">
+            <h3>What&#x27;s new</h3>
+            <ul></ul>
+            <div class="onedash-modal-buttons">
+                <a href="javascript:void(0);" id="newfeature-modal-dismiss" role="button" class="btn c-button f-primary" data-bi-id="whats-new-dismiss" data-bi-name="whats-new-dismiss" data-bi-slot="1">Got it!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="onedash-error-dialog" data-bi-area="onedash-error-dialog" style="display: none">
+    <div class="overlay"></div>
+    <div class="onedash-modal-wrapper">
+        <div class="onedash-modal-content">
+            <div class="onedash-modal-content-errorWrapper">
+                <div class="onedash-modal-content-errorDetails">
+                    <h3>Sorry, something went wrong. Please try again later.</h3>
+                    <div class="spacer-sm-bottom"><span id="onedash-error-errorMessage" class="win-color-fg-alert"></span></div>
+                    <div class="spacer-xxs-bottom">Correlation ID: <span id="onedash-error-correlationid"></span></div>
+                    <div class="spacer-xxs-bottom">App server: <span id="onedash-error-appServer"></span></div>
+                    <div class="spacer-xxs-bottom">Time: <span id="onedash-error-time"></span></div>
+                    <div class="spacer-xxs-bottom"><a href="javascript:void(0)" id="onedash-error-copyError">Copy error information to clipboard</a></div>
+                </div>
+            </div>
+            <div class="clear spacer-sm-bottom"></div>
+            <textarea id="onedash-error-errorInfo" tabindex="-1" style="height: 0px; width: 0px; padding: 0px; border-color: transparent; overflow: hidden;"></textarea>
+            <div class="onedash-modal-buttons">
+                <a href="/dashboard/support/servicerequests/create?stage=1" class="btn btn-primary" target="_blank" role="button" data-bi-slot="1" data-bi-id="OneDash_Error_Support" data-bi-name="ErrorDialog_Support">Support</a>
+                <button class="btn c-button f-secondary" role="button" id="onedash-error-closeFeedback" data-bi-slot="2" data-bi-id="OneDash_Error_DismissFeedback" data-bi-name="Dismiss">Dismiss</button>
+                <div><a href="javascript:window.location.reload(true)" id="onedash-error-refreshLink" class="link-action" data-bi-slot="3" data-bi-id="OneDash_Error_Refresh" data-bi-name="Refresh">Refresh page</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+    <script type="text/javascript">
+        var frontDoorEnabled = true;
+    </script>
+    <script type="text/javascript" src="https://pmecommonuxresources.azureedge.net/public/2023.05.09.5/js/common-nav.min.js" defer></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // flush global store for task menu functions
+            taskMenuReady.ready();
+            commonRequire(["partnerDashboard"]);
+            commonRequire(["shared-components"]);
+            window.fltCommonUxJsDelayLoad = Boolean(true);
+            if (fltCommonUxJsDelayLoad) {
+                if (document.readyState === 'complete') {
+                    commonRequire(["shared-components"], function (sharedcomponents) { sharedcomponents.ShowWhatsNewModal(); });
+                    commonRequire(["partnerDashboard", "agreements"], function (partnerDashboard, agreements) { if (agreements && agreements.CheckAgreementActions) { agreements.CheckAgreementActions(); } });
+                } else {
+                    $(window).on("load", function () {
+                        commonRequire(["shared-components"], function (sharedcomponents) { sharedcomponents.ShowWhatsNewModal(); });
+                        commonRequire(["partnerDashboard", "agreements"], function (partnerDashboard, agreements) { if (agreements && agreements.CheckAgreementActions) { agreements.CheckAgreementActions(); } });
+                    });
+                }
+            }
+            else {
+                commonRequire(["shared-components"], function (sharedcomponents) { sharedcomponents.ShowWhatsNewModal(); });
+                commonRequire(["agreements"], function (agreements) { $(document).on("agreementProgramSet", function () { agreements.CheckAgreementActions(); }); });
+            }
+            navigationLog();
+        });
+
+        var sharedComponentsStrings = {
+            next: 'Next',
+            previous: 'Previous',
+            pageXofY: 'Page {0} of {1}',
+            showingXRowsPerPage: 'Showing {0} rows',
+            showingAllRows: 'Show all rows',
+            xRowsPerPage: '{0} rows',
+            showAllRows: 'Show all rows',
+            showHide: 'Show/hide',
+            search: 'Enter search term'
+        };
+        var agreementsStrings = {
+            acceptOne: 'I accept',
+            acceptMultiple: 'I accept all agreements',
+            cancel: 'Cancel',
+            contact: 'Email your account manager'
+        };
+        var tooltipStrings = {
+            tooltipTextReady: 'Ready',
+            tooltipTextNotReady: 'Not Ready',
+            tooltipTextWarning: 'Warning',
+            tooltipTextError: 'Error'
+        };
+
+        var wsSurveyStrings = {
+            surveyQuestion1: 'Why did you turn off workspaces?',
+            surveyQ1Option1: 'Couldn&#x2019;t find what I was looking for',
+            surveyQ1Option2: 'It didn&#x2019;t work as I expected',
+            surveyQ1Option3: 'Didn&#x2019;t understand the new experience',
+            surveyQ1Option4: 'Other',
+            surveyQuestion2: 'Are you having problems with a workspace?',
+            surveyQ2Placeholder: 'Select a workspace'
+        };
+
+        var feedbackSurveyStrings = {
+            workspaceSelect : 'Which workspace are you describing?'
+        }
+
+        var workspaceStrings = [
+            { text: 'Enrollment', id: "wr1s1fg", active: "False" },
+            { text: 'APIs and Integration', id: "pm7xssm", active: "False" },
+            { text: 'Action Center', id: "d8hwe3j", active: "False" },
+            { text: 'Account Settings', id: "a4h83dj", active: `${isAccountSettings() ? "True" : "False"}` }
+        ];
+
+        function isAccountSettings() {
+            var accountPages = [
+                "payee/profiles",
+                "/payouts/profiles/manage/",
+                "/pcv/accountsettings",
+                "pcv/enrollment/sandbox",
+                "pcv/apiintegration/appmanagement",
+                "pcv/register",
+                "pcv/users",
+                "pc/users/myaccount",
+                "/dashboard/commerce2/auditrecords/list",
+                "dashboard/accountenterprise",
+                "account/devicemanagement",
+                "account/managecertificates",
+                "/account/v3",
+                "/account/workonbehalfof",
+                "/xboxconfig/devices",
+                "/xboxconfig/webservices",
+                "/xboxconfig/testaccounts",
+                "dashboard/sandboxes",
+                "xboxconfig/relyingparties",
+                "xboxconfig/businesspartners",
+                "dashboard/engagement",
+                "commerce/sharedservices",
+                "commerce/securitycenter/administrativerelationships",
+                "commerce/securitycenter/mfa",
+                "dashboard/account",
+                "referrals/v2/routingconfig",
+            ];
+
+            for (var i = 0; i < accountPages.length; i++)
+            {
+                if (window.location.href.toLowerCase().includes(accountPages[i]))
+                {
+                    return true;
+                }
+            };
+
+            return false;
+        }
+
+        var userIsConsumer = false;
+    </script>
+
+                <script>
+                    var temp = {
+                        text: "Apps and games",
+                        id: "rr3q88o",
+                        active: "False"
+                    };
+
+                    var removedWorkspaces = ["ck2ic0y", "ipc2021"]; // Support workspace, Internal tools
+                    if (removedWorkspaces.indexOf(temp.id) == -1)
+                    {
+                        workspaceStrings.push(temp);
+                    }
+                </script>
+                <script>
+                    var temp = {
+                        text: "Insights",
+                        id: "lks5q3i",
+                        active: "False"
+                    };
+
+                    var removedWorkspaces = ["ck2ic0y", "ipc2021"]; // Support workspace, Internal tools
+                    if (removedWorkspaces.indexOf(temp.id) == -1)
+                    {
+                        workspaceStrings.push(temp);
+                    }
+                </script>
+                <script>
+                    var temp = {
+                        text: "Payouts",
+                        id: "227z4kg",
+                        active: "False"
+                    };
+
+                    var removedWorkspaces = ["ck2ic0y", "ipc2021"]; // Support workspace, Internal tools
+                    if (removedWorkspaces.indexOf(temp.id) == -1)
+                    {
+                        workspaceStrings.push(temp);
+                    }
+                </script>
+                <script>
+                    var temp = {
+                        text: "Help &#x2B; support",
+                        id: "ck2ic0y",
+                        active: "False"
+                    };
+
+                    var removedWorkspaces = ["ck2ic0y", "ipc2021"]; // Support workspace, Internal tools
+                    if (removedWorkspaces.indexOf(temp.id) == -1)
+                    {
+                        workspaceStrings.push(temp);
+                    }
+                </script>
+        <script>
+            workspaceStrings.sort((a, b) => { return a.text.localeCompare(b.text); });
+        </script>
+
+
+            <script>
+                userIsConsumer = true;
+            </script>
+
+
+<script>
+    (function () {
+        $(document).ajaxError(function (event, jqxhr, ajaxSettings, thrownError) {
+            
+            if (jqxhr.status == 401 && jqxhr.getResponseHeader("WWW-Authenticate") != null) {
+                $('#signInPrompt').modal('show');
+            }
+        });
+
+        requirejs.onError = function (err) {
+            console.log(err);
+        };
+
+        $(document).ready(function () {
+            $('#signInCancel').click(function () {
+                $('#signInPrompt').modal('hide');
+            });
+        });
+    })();
+</script>
+
+<div id="flightPicker" role="presentation" style="display: none"></div>
+
+
+        <script type="text/javascript" src="https://partnerresources.azureedge.net/public/2023.4.27.1/scripts/bootstrap.min.js"></script>
+    <app-root></app-root>
+
+        <script src="https://sparkstorageaccwus2prod.blob.core.windows.net/frontend-build/runtime-es2015.1e2f5c24bd25aa8038b9.js" type onerror="cdnFallback('runtime-es2015.1e2f5c24bd25aa8038b9.js')"></script>
+        <script src="https://sparkstorageaccwus2prod.blob.core.windows.net/frontend-build/runtime-es5.1e2f5c24bd25aa8038b9.js" nomodule defer onerror="cdnFallback('runtime-es5.1e2f5c24bd25aa8038b9.js')"></script>
+        <script src="https://sparkstorageaccwus2prod.blob.core.windows.net/frontend-build/polyfills-es5.44a2d449a791307c95da.js" nomodule defer onerror="cdnFallback('polyfills-es5.44a2d449a791307c95da.js')"></script>
+        <script src="https://sparkstorageaccwus2prod.blob.core.windows.net/frontend-build/polyfills-es2015.e0a1480988be0e9dd8d2.js" type onerror="cdnFallback('polyfills-es2015.e0a1480988be0e9dd8d2.js')"></script>
+        <script src="https://sparkstorageaccwus2prod.blob.core.windows.net/frontend-build/styles-es2015.5d19e3872eac210a02a4.js" type onerror="cdnFallback('styles-es2015.5d19e3872eac210a02a4.js')"></script>
+        <script src="https://sparkstorageaccwus2prod.blob.core.windows.net/frontend-build/styles-es5.5d19e3872eac210a02a4.js" nomodule defer onerror="cdnFallback('styles-es5.5d19e3872eac210a02a4.js')"></script>
+        <script src="https://sparkstorageaccwus2prod.blob.core.windows.net/frontend-build/main-es2015.e49e9bd04e0e4fccf865.js" type onerror="cdnFallback('main-es2015.e49e9bd04e0e4fccf865.js')"></script>
+        <script src="https://sparkstorageaccwus2prod.blob.core.windows.net/frontend-build/main-es5.e49e9bd04e0e4fccf865.js" nomodule defer onerror="cdnFallback('main-es5.e49e9bd04e0e4fccf865.js')"></script>
+    <div>
+    
+    <script>
+        fdRequire(['init']);
+    </script>
+
+    <div id="expiredAgreements"></div>
+    <div id="signInPrompt" class="modal c-dialog f-flow" aria-hidden="true">
+        <div class="modal-dialog" role="dialog" aria-label="Flow scroll">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-subtitle">Sign in required</h4>
+                </div>
+                <div class="modal-body">
+                    <br /><p>Your session has expired.  Please sign-in again to continue.  Unfortunately any unsaved changes will be lost.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group c-group">
+                        <a href="/aad?action=signin&returnPath=/en-us/dashboard/win32apps/9cbbf2b1-26b4-4f16-b53c-e6b159701f38/submissions/draftsubmission/listings" role="button" class="btn btn-primary c-button f-primary">Sign in</a>
+                        <button type="cancel" class="btn c-button" id="signInCancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script> 
+        $(document).on("taskMenuReady", function(event) {
+           document.getElementById('maincontent').focus();
+        });
+
+        function skipContent() {
+            document.getElementById('maincontent').focus();
+        }
+    </script>
+</body>
+</html>

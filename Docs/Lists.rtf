@@ -1,0 +1,98 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue-Light;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red69\green119\blue154;\red95\green95\blue95;}
+{\*\expandedcolortbl;;\cssrgb\c33500\c54158\c67000;\cssrgb\c45000\c45000\c45000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww31640\viewh20700\viewkind0
+\deftab920
+\pard\pardeftab920\sl216\slmult1\partightenfactor0
+
+\f0\b\fs48 \cf2 Simple lists
+\f1\b0\fs144 \
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f2\fs36 \cf3 \
+Lists are similar to arrays - with some big differences \
+They can contain elements of different types\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f3 \cf3 vowels = [\'91a\'92,\'92e\'92,\'92i\'92,\'92o\'92,\'92u\'92]\uc0\u8232 size = [28,30,32,34,36,38,40,\'92XS\'92,\'92S\'92,\'92M\'92,\'92L\'92,\'92XL\'92]\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f2 \cf3 \uc0\u8232 They are flexible\u8232 They are 1 - dimensional - but we can have lists of lists to get the effect of multidimensional arrays.\
+\pard\pardeftab920\partightenfactor0
+\cf3 \
+\pard\pardeftab920\sl216\slmult1\partightenfactor0
+
+\f0\b\fs48 \cf2 Indexes\
+
+\f1\b0\fs36 \
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f2 \cf3 Selecting items from lists is very flexible:\
+indexes work as you would expect\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f3 \cf3 vowels[3] is \'91o\'92\
+and in other ways \
+vowels[-2] is also \'91o\'92\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f2 \cf3 negative indexes count from the end of the list with -1 being the last element.\
+We can do the same with strings\
+vs = \'91aeiou\'92\
+\pard\pardeftab920\partightenfactor0
+\cf3 vs [3] is \'91o\'92 as is vs[-2]\
+\
+\pard\pardeftab920\sl216\slmult1\partightenfactor0
+
+\f0\b\fs48 \cf2 Slices\
+
+\f1\b0\fs36 \
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f2 \cf3 Ranges of items from a list can be selected by slices. Slicing always creates a new list.\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f3 \cf3 vowels[1:4] is [\'91e\'92,\'92i\'92,\'92o\'92]\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f2 \cf3 Note that the last index is the one after the the position of the last value you want.\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f3 \cf3 b= vowels 	# gives two names for the same list\
+b=vowels[:]	# creates a copy\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f2 \cf3 Slices can be assigned to:\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f3 \cf3 vowels[1:3]=[\'91x\'92,\'92y\'92,\'92z\'92]\
+\pard\pardeftab920\partightenfactor0
+\cf3 \
+\pard\pardeftab920\sl216\slmult1\partightenfactor0
+
+\f0\b \cf2 List operations\
+\
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f2\b0 \cf3 These operations are defined for lists (not Strings). All shown on a list 
+\f3 l
+\f2 \
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f3 \cf3 l.append(item)		 # adds item to the end of the list\
+l.extend(list)        # adds list to the end of the list\
+l.insert(index,item)  # adds item at position index\
+l.remove(item)        # takes the first copy of item out of the list\
+l.pop(index)          # removes item at index, the last item if no               \uc0\u8232                       # index\
+l.index(item)         # the position of the item\
+l.count(item)         # the number of times item appears\
+l.sort(\'85\'85\'85.)          # sorts the list (usually works with no arguments)\uc0\u8232                       # in place\
+l.reverse()           # reverses the list - in place
+\f2 \
+\pard\pardeftab920\sa640\partightenfactor0
+
+\f0\b \cf3 del
+\f2\b0  is a special construct for deleting things. It can be used to take items out of lists( e.g. del vowel[3]) or entire slices.\
+}
